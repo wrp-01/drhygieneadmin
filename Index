@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Hygiene Profile</title>
+    <!-- SEO Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta id="ogTitle" property="og:title" content="Dr. Hygiene Profile">
+    <meta id="ogImage" property="og:image" content="">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(180deg, #E0F7FA 0%, #FFFFFF 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        .blob-shape {
+            border-radius: 45% 55% 55% 45% / 40% 50% 50% 60%;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .blob-shape:hover {
+            border-radius: 50%;
+            transform: scale(1.02);
+        }
+        .btn-hover { transition: transform 0.2s; }
+        .btn-hover:active { transform: scale(0.95); }
+        
+        /* Loading State */
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="py-8 px-4 w-full"> 
+
+    <div class="w-full max-w-md bg-white/80 backdrop-blur-sm shadow-xl rounded-[30px] overflow-hidden p-6 relative border border-white mx-auto min-h-[600px] flex flex-col">
+        
+        <!-- Header / Logo Area -->
+        <div class="flex justify-end items-center mb-6">
+            <div class="flex items-center gap-3">
+                
+                <!-- 🔴 จุดที่ 1: แก้ลิงก์โลโก้บริษัทตรงนี้ (Company Logo) -->
+                <img src="https://cdn-icons-png.flaticon.com/512/3063/3063176.png" 
+                     alt="Dr. Hygiene Logo" 
+                     class="w-12 h-12 object-contain drop-shadow-sm">
+                
+                <div class="text-right leading-tight">
+                    <h1 class="text-xl font-bold text-blue-600 tracking-tight">DR. HYGIENE</h1>
+                    <p class="text-[10px] text-blue-800 font-semibold tracking-wide">MEDICAL PRODUCTS CO.,Ltd.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFILE VIEW (Always Visible) -->
+        <div id="profileView" class="fade-in">
+            <!-- Intro Text -->
+            <div class="mb-4">
+                <div class="flex items-center gap-2 mb-1">
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <p class="text-gray-500 text-lg font-light">Hello! My name is</p>
+                </div>
+                <!-- Name Area -->
+                <h2 id="pName" class="text-2xl font-bold text-gray-900 leading-tight min-h-[2rem]">Loading...</h2>
+                <p id="pPosition" class="text-sm text-blue-600 font-medium mt-1 min-h-[1.5rem]"></p>
+            </div>
+
+            <!-- Profile & Contact Grid -->
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <!-- Profile Image -->
+                <div class="flex items-center justify-center relative">
+                    <div class="w-full aspect-[3/4] blob-shape relative bg-blue-100 shadow-inner">
+                        <!-- รูปคนจะถูกเปลี่ยนอัตโนมัติจาก JavaScript ด้านล่าง -->
+                        <img id="pImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Contact Box -->
+                <div class="bg-[#3B82F6] rounded-2xl p-3 flex flex-col justify-between shadow-lg text-white relative overflow-hidden">
+                    <!-- Background decoration -->
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -mr-8 -mt-8"></div>
+                    
+                    <div class="text-center mb-2 relative z-10">
+                        <h3 class="font-semibold text-lg">Contact</h3>
+                    </div>
+                    <div class="space-y-2 relative z-10">
+                        <a id="btnPhone" href="#" class="bg-white text-blue-600 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
+                            <i class="fas fa-phone-alt text-lg"></i>
+                            <span class="font-bold text-sm flex-1 text-center">Call Me</span>
+                        </a>
+                        <a id="btnLine" href="#" class="bg-white text-green-500 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
+                            <i class="fab fa-line text-xl"></i>
+                            <span class="font-bold text-sm flex-1 text-center text-blue-500">Line</span>
+                        </a>
+                        <a id="btnWeb" href="#" class="bg-white text-blue-600 rounded-full py-2 px-3 flex items-center justify-center shadow-sm btn-hover no-underline">
+                            <span class="font-bold text-sm">Website</span>
+                        </a>
+                    </div>
+                    <div class="mt-3 text-center relative z-10">
+                        <p class="text-[10px] text-blue-100 font-medium">Mon. - Fri. 08.30 - 17.30</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Section (Shared) -->
+            <div class="mb-6">
+                <h3 class="font-bold text-xl mb-3">Dr.Hygiene Social Media</h3>
+                <div class="flex gap-3">
+                    <a href="#" class="w-12 h-12 bg-[#3b5998] rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-12 h-12 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <!-- Map Links (Shared) -->
+            <div class="mb-6 space-y-4">
+                <h3 class="font-bold text-xl mb-1">Dr.Hygiene Map</h3>
+                
+                <!-- Head Office Card -->
+                <a href="#" class="block bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+                    <div class="flex">
+                        <div class="w-1/3 relative">
+                            <!-- 🔴 จุดที่ 2.1: แก้รูปแผนที่สำนักงานใหญ่ (Head Office Map Image) -->
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-24 object-cover" alt="Head Office">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
+                        </div>
+                        <div class="w-2/3 p-3 flex flex-col justify-center">
+                            <span class="text-[10px] bg-[#D4E8D4] text-[#385936] px-2 py-0.5 rounded-full w-fit mb-1 font-semibold">Dr. Hygiene Medical Products</span>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1 group-hover:text-blue-600 transition-colors">Head office map location</h4>
+                            <p class="text-gray-400 text-xs flex items-center gap-1"><i class="fas fa-map-pin text-red-500"></i> Google Map</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Factory Card -->
+                <a href="#" class="block bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+                    <div class="flex">
+                        <div class="w-1/3 relative">
+                            <!-- 🔴 จุดที่ 2.2: แก้รูปแผนที่โรงงาน (Factory Map Image) -->
+                            <img src="https://images.unsplash.com/photo-1565514020176-db8b3684a0d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-24 object-cover" alt="Factory">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
+                        </div>
+                        <div class="w-2/3 p-3 flex flex-col justify-center">
+                            <span class="text-[10px] bg-[#FFF5CC] text-[#8C6D1F] px-2 py-0.5 rounded-full w-fit mb-1 font-semibold">Dr. Hygiene Medical Products</span>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1 group-hover:text-blue-600 transition-colors">Factory map location</h4>
+                            <p class="text-gray-400 text-xs flex items-center gap-1"><i class="fas fa-map-pin text-red-500"></i> Google Map</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Shop Section -->
+            <div class="mb-4">
+                <h3 class="font-bold text-xl mb-3">Dr.Hygiene Shop</h3>
+                <div class="flex gap-4">
+                    <!-- Shopee -->
+                    <a href="#" class="flex flex-col items-center gap-1 btn-hover group">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md border border-gray-100 group-hover:shadow-lg transition-all p-2">
+                            <!-- 🔴 จุดที่ 3.1: แก้โลโก้ Shopee -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1024px-Shopee.svg.png" alt="Shopee" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-xs font-semibold text-gray-600">Shopee</span>
+                    </a>
+
+                    <!-- TikTok Shop -->
+                    <a href="#" class="flex flex-col items-center gap-1 btn-hover group">
+                        <div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center shadow-md border border-gray-100 group-hover:shadow-lg transition-all p-3">
+                             <!-- 🔴 จุดที่ 3.2: แก้โลโก้ TikTok -->
+                             <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" class="w-full h-full object-contain filter invert">
+                        </div>
+                        <span class="text-xs font-semibold text-gray-600">TikTok</span>
+                    </a>
+
+                    <!-- Lazada -->
+                    <a href="#" class="flex flex-col items-center gap-1 btn-hover group">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md border border-gray-100 group-hover:shadow-lg transition-all p-2">
+                             <!-- 🔴 จุดที่ 3.3: แก้โลโก้ Lazada -->
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Lazada_%282019%29.svg/1024px-Lazada_%282019%29.svg.png" alt="Lazada" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-xs font-semibold text-gray-600">Lazada</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ==========================================
+        // 🔴 จุดที่ 4: ใส่ข้อมูลทีมและรูปโปรไฟล์ตรงนี้
+        // ==========================================
+        const teamData = {
+            "fuse": {
+                name: "Fuse Weerapong Hamathulin",
+                position: "Sales Manager",
+                // 🔴 ใส่ลิงก์รูปคนตรงนี้ (Profile Image)
+                image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                phone: "0812345678",
+                line: "https://line.me/ti/p/~fuse_line",
+                website: "https://drhygiene.com"
+            },
+            "jane": {
+                name: "Jane Smith",
+                position: "Marketing Director",
+                // 🔴 ใส่ลิงก์รูปคนตรงนี้
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                phone: "0898765432",
+                line: "https://line.me/ti/p/~jane_marketing",
+                website: "https://drhygiene.com/marketing"
+            },
+            "john": {
+                name: "John Doe",
+                position: "Product Specialist",
+                // 🔴 ใส่ลิงก์รูปคนตรงนี้
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                phone: "022223333",
+                line: "https://line.me/ti/p/~john_prod",
+                website: "https://drhygiene.com"
+            }
+            // เพิ่มให้ครบ 10 คนได้เลย
+        };
+
+        // ==========================================
+        // ระบบอัตโนมัติ (ไม่ต้องแก้ไขส่วนนี้)
+        // ==========================================
+        
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function loadProfile(userId) {
+            // ถ้าไม่เจอ User ID ให้ใช้คนแรกในลิสต์เป็น Default
+            if (!teamData[userId]) {
+                userId = Object.keys(teamData)[0]; 
+            }
+            
+            const user = teamData[userId];
+            
+            // Update UI Elements
+            document.getElementById('pName').innerText = user.name;
+            document.getElementById('pPosition').innerText = user.position;
+            document.getElementById('pImage').src = user.image;
+            document.getElementById('btnPhone').href = `tel:${user.phone}`;
+            document.getElementById('btnLine').href = user.line;
+            document.getElementById('btnWeb').href = user.website;
+
+            // Update Title & Meta for sharing
+            document.title = `${user.name} - Dr. Hygiene`;
+            document.getElementById('ogTitle').content = `${user.name} - Dr. Hygiene Profile`;
+            document.getElementById('ogImage').content = user.image;
+        }
+
+        // เริ่มทำงานทันทีที่เปิดเว็บ
+        window.onload = () => {
+            const userId = getQueryParam('id');
+            loadProfile(userId);
+        };
+
+    </script>
+</body>
+</html>
