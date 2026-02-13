@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Hygiene Profile</title>
+    <!-- 🔴 แก้ชื่อ Title ตรงนี้ -->
+    <title>Fuse Weerapong - Dr. Hygiene</title> 
+    
     <!-- SEO Meta Tags -->
     <meta property="og:type" content="website">
-    <meta id="ogTitle" property="og:title" content="Dr. Hygiene Profile">
-    <meta id="ogImage" property="og:image" content="">
+    <meta property="og:title" content="Fuse Weerapong - Dr. Hygiene Profile">
+    <meta property="og:image" content="https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/Fuse.png?raw=true">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,17 +43,17 @@
                  class="h-16 object-contain drop-shadow-sm">
         </div>
 
-        <!-- PROFILE VIEW (Always Visible) -->
-        <div id="profileView" class="fade-in">
+        <!-- PROFILE VIEW -->
+        <div class="fade-in">
             <!-- Intro Text -->
             <div class="mb-4">
                 <div class="flex items-center gap-2 mb-1">
                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
                     <p class="text-gray-500 text-lg font-light">Hello! My name is</p>
                 </div>
-                <!-- Name Area -->
-                <h2 id="pName" class="text-2xl font-bold text-gray-900 leading-tight min-h-[2rem]">Loading...</h2>
-                <p id="pPosition" class="text-sm text-blue-600 font-medium mt-1 min-h-[1.5rem]"></p>
+                <!-- 🔴 แก้ชื่อและตำแหน่งตรงนี้ -->
+                <h2 class="text-2xl font-bold text-gray-900 leading-tight">Fuse Weerapong Hamathulin</h2>
+                <p class="text-sm text-blue-600 font-medium mt-1">Sales Manager</p>
             </div>
 
             <!-- Profile & Contact Grid -->
@@ -59,7 +61,8 @@
                 <!-- Profile Image Section -->
                 <div class="flex items-center justify-center relative">
                     <div class="w-full relative">
-                        <img id="pImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+                        <!-- 🔴 แก้รูปโปรไฟล์ตรงนี้ (src) -->
+                        <img src="https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/Fuse.png?raw=true" 
                              alt="Profile" 
                              class="w-full h-auto object-contain drop-shadow-lg">
                     </div>
@@ -73,20 +76,20 @@
                         <h3 class="font-semibold text-lg">Contact</h3>
                     </div>
                     <div class="space-y-2 relative z-10">
-                        <!-- ปุ่มโทรศัพท์: กลับด้านไอคอนด้วย scale-x-[-1] -->
-                        <a id="btnPhone" href="#" class="bg-white text-blue-600 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
+                        <!-- 🔴 แก้เบอร์โทรตรงนี้ (href="tel:...") -->
+                        <a href="tel:0661241409" class="bg-white text-blue-600 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
                             <i class="fas fa-phone-alt text-lg scale-x-[-1]"></i>
                             <span class="font-bold text-sm flex-1 text-center">Call Me</span>
                         </a>
 
-                        <!-- ปุ่ม Line -->
-                        <a id="btnLine" href="#" class="bg-white text-green-500 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
+                        <!-- 🔴 แก้ลิงก์ LINE ตรงนี้ (href) -->
+                        <a href="https://line.me/ti/p/ACtAwxfd8n" target="_blank" class="bg-white text-green-500 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
                             <i class="fab fa-line text-xl"></i>
                             <span class="font-bold text-sm flex-1 text-center text-blue-500">Line</span>
                         </a>
 
-                        <!-- ปุ่ม Website: จัดรูปแบบให้เท่ากันกับปุ่มอื่น -->
-                        <a id="btnWeb" href="#" class="bg-white text-blue-600 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
+                        <!-- 🔴 แก้ลิงก์เว็บไซต์ตรงนี้ (href) -->
+                        <a href="https://www.drhygiene.co.th/" target="_blank" class="bg-white text-blue-600 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
                             <i class="fas fa-globe text-xl"></i>
                             <span class="font-bold text-sm flex-1 text-center">Website</span>
                         </a>
@@ -101,9 +104,9 @@
             <div class="mb-6">
                 <h3 class="font-bold text-xl mb-3">Dr.Hygiene Social Media</h3>
                 <div class="flex gap-3">
-                    <a href="#" class="w-12 h-12 bg-[#3b5998] rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="w-12 h-12 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/Drhygieneofficial" class="w-12 h-12 bg-[#3b5998] rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/dr_hygienemedical" class="w-12 h-12 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@drhygienemedical?is_from_webapp=1&sender_device=pc" class="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-white text-2xl shadow-md btn-hover transform hover:-translate-y-1 transition-all"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             
@@ -112,7 +115,7 @@
                 <h3 class="font-bold text-xl mb-1">Dr.Hygiene Map</h3>
                 
                 <!-- Head Office Card -->
-                <a href="#" class="block bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+                <a href="https://share.google/h2NqxImq8oBafilI5" class="block bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
                     <div class="flex">
                         <div class="w-1/3 relative">
                             <img src="https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/ho.png?raw=true" class="w-full h-24 object-cover">
@@ -127,7 +130,7 @@
                 </a>
 
                 <!-- Factory Card -->
-                <a href="#" class="block bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+                <a href="https://share.google/CS45wlIagANAuH1aV" class="block bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
                     <div class="flex">
                         <div class="w-1/3 relative">
                             <img src="https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/fc.png?raw=true" class="w-full h-24 object-cover">
@@ -147,7 +150,7 @@
                 <h3 class="font-bold text-xl mb-3">Dr.Hygiene Shop</h3>
                 <div class="flex gap-4">
                     <!-- Shopee -->
-                    <a href="#" class="flex flex-col items-center gap-1 btn-hover group">
+                    <a href="https://shorturl.at/FZGjw" class="flex flex-col items-center gap-1 btn-hover group">
                         <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md border border-gray-100 group-hover:shadow-lg transition-all p-2">
                             <img src="https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/shp.png?raw=true" class="w-full h-full object-contain">
                         </div>
@@ -155,7 +158,7 @@
                     </a>
 
                     <!-- TikTok Shop -->
-                    <a href="#" class="flex flex-col items-center gap-1 btn-hover group">
+                    <a href="https://shorturl.at/uZgsf" class="flex flex-col items-center gap-1 btn-hover group">
                         <div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center shadow-md border border-gray-100 group-hover:shadow-lg transition-all p-3">
                              <img src="https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/tts.png?raw=true" class="w-full h-full object-contain filter invert">
                         </div>
@@ -163,7 +166,7 @@
                     </a>
 
                     <!-- Lazada -->
-                    <a href="#" class="flex flex-col items-center gap-1 btn-hover group">
+                    <a href="https://shorturl.at/KVMVr" class="flex flex-col items-center gap-1 btn-hover group">
                         <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md border border-gray-100 group-hover:shadow-lg transition-all p-2">
                              <img src="https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/laz.png?raw=true" class="w-full h-full object-contain">
                         </div>
@@ -175,78 +178,5 @@
 
     </div>
 
-    <script>
-        // ==========================================
-        // ข้อมูลทีม
-        // ==========================================
-        const teamData = {
-            "fuse": {
-                name: "Fuse Weerapong Hamathulin",
-                position: "Sales Manager",
-                image: "https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/Fuse.png?raw=true",
-                phone: "0812345678",
-                line: "https://line.me/ti/p/~fuse_line",
-                website: "https://drhygiene.com"
-            },
-            "jane": {
-                name: "Jane Smith",
-                position: "Marketing Director",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                phone: "0898765432",
-                line: "https://line.me/ti/p/~jane_marketing",
-                website: "https://drhygiene.com/marketing"
-            },
-            "john": {
-                name: "John Doe",
-                position: "Product Specialist",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                phone: "022223333",
-                line: "https://line.me/ti/p/~john_prod",
-                website: "https://drhygiene.com"
-            }
-        };
-
-        // ==========================================
-        // ระบบอัตโนมัติ
-        // ==========================================
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            const value = urlParams.get(param);
-            return value ? value.trim() : null;
-        }
-
-        function loadProfile(userId) {
-            let user = null;
-
-            if (userId && teamData[userId]) {
-                user = teamData[userId];
-            } else if (userId) {
-                const key = Object.keys(teamData).find(k => k.toLowerCase() === userId.toLowerCase());
-                if (key) user = teamData[key];
-            }
-
-            if (!user) {
-                const firstKey = Object.keys(teamData)[0];
-                user = teamData[firstKey]; 
-            }
-            
-            document.getElementById('pName').innerText = user.name;
-            document.getElementById('pPosition').innerText = user.position;
-            document.getElementById('pImage').src = user.image;
-            document.getElementById('btnPhone').href = `tel:${user.phone}`;
-            document.getElementById('btnLine').href = user.line;
-            document.getElementById('btnWeb').href = user.website;
-
-            document.title = `${user.name} - Dr. Hygiene`;
-            document.getElementById('ogTitle').content = `${user.name} - Dr. Hygiene Profile`;
-            document.getElementById('ogImage').content = user.image;
-        }
-
-        window.onload = () => {
-            const userId = getQueryParam('id');
-            console.log("Loading ID:", userId);
-            loadProfile(userId);
-        };
-    </script>
 </body>
 </html>
