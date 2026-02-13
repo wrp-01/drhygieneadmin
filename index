@@ -21,7 +21,6 @@
             justify-content: center;
             align-items: center; 
         }
-        /* 🔴 ลบ Class .blob-shape ออกไปเลย เพราะเราจะไม่ใช้แล้ว */
         
         .btn-hover { transition: transform 0.2s; }
         .btn-hover:active { transform: scale(0.95); }
@@ -59,7 +58,6 @@
             <div class="grid grid-cols-2 gap-4 mb-8">
                 <!-- Profile Image Section -->
                 <div class="flex items-center justify-center relative">
-                    <!-- 🔴 แก้ไขแล้ว: ลบ blob-shape, bg-blue-100 ออก และใช้ object-contain เพื่อให้เห็นกรอบรูปเต็มๆ -->
                     <div class="w-full relative">
                         <img id="pImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
                              alt="Profile" 
@@ -75,19 +73,19 @@
                         <h3 class="font-semibold text-lg">Contact</h3>
                     </div>
                     <div class="space-y-2 relative z-10">
-                        <!-- ปุ่มโทรศัพท์: เพิ่ม scale-x-[-1] เพื่อกลับด้านไอคอน -->
+                        <!-- ปุ่มโทรศัพท์: กลับด้านไอคอนด้วย scale-x-[-1] -->
                         <a id="btnPhone" href="#" class="bg-white text-blue-600 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
                             <i class="fas fa-phone-alt text-lg scale-x-[-1]"></i>
                             <span class="font-bold text-sm flex-1 text-center">Call Me</span>
                         </a>
 
-                        <!-- ปุ่ม Line: คงเดิม -->
+                        <!-- ปุ่ม Line -->
                         <a id="btnLine" href="#" class="bg-white text-green-500 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
                             <i class="fab fa-line text-xl"></i>
                             <span class="font-bold text-sm flex-1 text-center text-blue-500">Line</span>
                         </a>
 
-                        <!-- ปุ่ม Website: เพิ่มไอคอนและจัด layout ให้เท่ากับปุ่มอื่น -->
+                        <!-- ปุ่ม Website: จัดรูปแบบให้เท่ากันกับปุ่มอื่น -->
                         <a id="btnWeb" href="#" class="bg-white text-blue-600 rounded-full py-2 px-3 flex items-center gap-2 shadow-sm btn-hover no-underline">
                             <i class="fas fa-globe text-xl"></i>
                             <span class="font-bold text-sm flex-1 text-center">Website</span>
