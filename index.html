@@ -26,10 +26,12 @@
         .btn-hover { transition: transform 0.2s; }
         .btn-hover:active { transform: scale(0.95); }
         
+        /* ป้องกันอาการหน้าเว็บกระพริบตอนโหลด */
         .fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        [v-cloak] { display: none; }
+        #app { visibility: hidden; }
+        #app.ready { visibility: visible; }
     </style>
 </head>
 <body class="py-8 px-4 w-full"> 
@@ -51,8 +53,8 @@
                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
                     <p class="text-gray-500 text-lg font-light">Hello! My name is</p>
                 </div>
-                <h2 id="user-name" class="text-2xl font-bold text-gray-900 leading-tight">Loading...</h2>
-                <p id="user-role" class="text-sm text-blue-600 font-medium mt-1">Position</p>
+                <h2 id="user-name" class="text-2xl font-bold text-gray-900 leading-tight"></h2>
+                <p id="user-role" class="text-sm text-blue-600 font-medium mt-1"></p>
             </div>
 
             <!-- Profile & Contact Grid -->
@@ -89,7 +91,7 @@
                 </div>
             </div>
 
-            <!-- Social Media Section (Fixed) -->
+            <!-- Social Media Section -->
             <div class="mb-6">
                 <h3 class="font-bold text-xl mb-3">Dr.Hygiene Social Media</h3>
                 <div class="flex gap-3">
@@ -99,7 +101,7 @@
                 </div>
             </div>
             
-            <!-- Map Links (Fixed) -->
+            <!-- Map Links -->
             <div class="mb-6 space-y-4">
                 <h3 class="font-bold text-xl mb-1">Dr.Hygiene Map</h3>
                 <a href="https://share.google/h2NqxImq8oBafilI5" class="block bg-gray-50 rounded-2xl overflow-hidden shadow-sm group">
@@ -113,7 +115,7 @@
                 </a>
             </div>
 
-            <!-- Shop Section (Fixed) -->
+            <!-- Shop Section -->
             <div class="mb-4">
                 <h3 class="font-bold text-xl mb-3">Dr.Hygiene Shop</h3>
                 <div class="flex gap-4">
@@ -125,7 +127,7 @@
     </div>
 
     <script>
-        // 1. 🟢 ส่วนจัดการข้อมูลพนักงาน (เพิ่มพนักงานใหม่ตรงนี้ได้เลย)
+        // 1. Database - ข้อมูลพนักงาน
         const users = {
             "fuse": {
                 name: "Fuse Weerapong Hamathulin",
@@ -134,49 +136,47 @@
                 line: "https://line.me/ti/p/ACtAwxfd8n",
                 img: "https://github.com/wrp-01/drhygieneadmin/blob/47cd08681ac43289ff1a3aab8de33c3044d3b991/1x/Fuse.png?raw=true"
             },
-            "nan": {
-                name: "Nan Sunanta Leelapattana",
-                role: "Deputy Chief Executive Officer • Management",
-                phone: "088-010-3260",
-                line: "https://line.me/ti/p/example",
-                img: "https://github.com/wrp-01/drhygieneadmin/blob/ef4e1534347a2cb66f4c0061c4744eded7a7ee2d/1x/K.nan.png"
-            }
-             "john": {
+            "john": {
                 name: "John Smith",
                 role: "Marketing Executive",
                 phone: "0812345678",
                 line: "https://line.me/ti/p/example",
                 img: "https://via.placeholder.com/400x400/3b82f6/ffffff?text=John"
             }
-            // สามารถเพิ่มพนักงานคนต่อๆ ไปได้ที่นี่...
         };
 
-        // 2. 🔵 ส่วนดึงค่าจาก URL
-        function loadUserProfile() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const username = urlParams.get('user') || 'fuse'; // ถ้าไม่มีชื่อใน URL ให้แสดงคุณ Fuse เป็นคนแรก
-            const userData = users[username.toLowerCase()];
+        // 2. Logic การโหลดข้อมูล (ปรับปรุงให้ทำงานได้เสถียรขึ้นบน GitHub)
+        function initApp() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const username = urlParams.get('user') || 'fuse'; 
+                const userData = users[username.toLowerCase()];
 
-            if (userData) {
-                // เปลี่ยนข้อความในหน้าเว็บ
-                document.getElementById('user-name').innerText = userData.name;
-                document.getElementById('user-role').innerText = userData.role;
-                document.getElementById('user-img').src = userData.img;
-                document.getElementById('link-phone').href = 'tel:' + userData.phone;
-                document.getElementById('link-line').href = userData.line;
-                
-                // อัปเดต Title และ SEO
-                document.title = userData.name + " - Dr. Hygiene";
-                document.getElementById('og-title').content = userData.name + " - Dr. Hygiene Profile";
-                document.getElementById('og-image').content = userData.img;
-            } else {
-                // กรณีไม่พบชื่อพนักงาน
-                document.getElementById('user-name').innerText = "User Not Found";
+                if (userData) {
+                    document.getElementById('user-name').textContent = userData.name;
+                    document.getElementById('user-role').textContent = userData.role;
+                    document.getElementById('user-img').src = userData.img;
+                    document.getElementById('link-phone').href = 'tel:' + userData.phone;
+                    document.getElementById('link-line').href = userData.line;
+                    
+                    document.title = userData.name + " - Dr. Hygiene";
+                } else {
+                    document.getElementById('user-name').textContent = "ไม่พบข้อมูลผู้ใช้งาน";
+                }
+
+                // แสดงผลหลังจากโหลดข้อมูลเสร็จ
+                document.getElementById('app').classList.add('ready');
+            } catch (error) {
+                console.error("Error loading profile:", error);
             }
         }
 
-        // เริ่มทำงานเมื่อโหลดหน้า
-        window.onload = loadUserProfile;
+        // ตรวจสอบความพร้อมของ DOM ก่อนรัน JS
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
     </script>
 
 </body>
